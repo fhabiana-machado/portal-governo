@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<registry>
+  <records interface="plone.base.interfaces.controlpanel.ISocialMediaSchema"
+           prefix="plone"
+           purge="false"
+  >
+    <value key="share_social_data">True</value>
+    <value key="twitter_username">procergs</value>
+  </records>
+</registry>
