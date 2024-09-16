@@ -31,6 +31,36 @@ class ISecretaria(model.Schema):
         constraint=validadores.is_valid_telefone,
     )
 
+    model.fieldset(
+        "endereco",
+        _("Endereço"),
+        fields=["endereco", "complemento", "cidade", "estado", "cep"],
+    )
+
+    endereco = schema.TextLine(
+        title=_("Endereço"),
+        description=_("Informe o logradouro e número"),
+        required=False,
+    )
+    complemento = schema.Text(
+        title=_("Complemento"),
+        description=_("Informe o complemento. Ex: AP1, Casa"),
+        required=False,
+    )
+    cidade = schema.TextLine(
+        title=_("Cidade"), description=_("Informe o município"), required=False
+    )
+    estado = schema.TextLine(
+        title=_("Estado"),
+        description=_("Informe o estado do país. Ex: RS"),
+        required=False,
+    )
+    cep = schema.TextLine(
+        title=_("CEP"),
+        description=_("Informe o Código de Endereço Postal. Ex: 900123-456"),
+        required=False,
+    )
+
 
 @implementer(ISecretaria)
 class Secretaria(Container):
