@@ -60,6 +60,8 @@ class TestSecretaria:
             "plone.constraintypes",
             "plone.navigationroot",
             "volto.preview_image",
+            "portal.governo.behavior.contato",
+            "portal.governo.behavior.endereco",
         ],
     )
     def test_has_behavior(self, get_behaviors, behavior):
