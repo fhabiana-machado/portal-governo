@@ -1,5 +1,6 @@
 // Views
 import SecretariaView from './components/Views/SecretariaView';
+import PessoaView from './components/Views/PessoaView';
 
 const applyConfig = (config) => {
   config.settings = {
@@ -12,6 +13,7 @@ const applyConfig = (config) => {
   config.views.contentTypesViews = {
     ...config.views.contentTypesViews,
     Secretaria: SecretariaView,
+    Pessoa: PessoaView,
   };
   return config;
 };
