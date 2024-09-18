@@ -4,6 +4,7 @@ import { getBaseUrl } from '@plone/volto/helpers';
 import { Container } from '@plone/components';
 import Contato from '../Contato/Contato';
 import Endereco from '../Endereco/Endereco';
+import Gestor from '../Gestor/Gestor';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 
 const SecretariaView = (props) => {
@@ -16,6 +17,7 @@ const SecretariaView = (props) => {
       <RenderBlocks {...props} path={path} />
       <Endereco content={content} />
       <Contato content={content} />
+      <Gestor content={content.gestor} />
     </Container>
   );
 };
