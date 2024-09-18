@@ -1,38 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container } from '@plone/components';
+import GestorCard from './GestorCard';
 
-const Gestor = (props) => {
-  const content = props.content;
-  const { title } = content;
-  const img = content.image_scales?.image;
-  const scale = img ? img[0]?.scales?.thumb : null;
-
+const Gestor = ({ content }) => {
   return (
-    <Container narrow className="gestor-wrapper">
-      <h4>Gestor</h4>
-      {title && (
-        <Container>
-          <span className="title">{title}</span>
-        </Container>
-      )}
-      {img ? (
-        <img
-          src={`${content['@id']}/${scale.download}`}
-          alt={`Foto de ${content.title}`}
-          className={'portrait listitem'}
-        />
-      ) : (
-        <Icon name={personSVG} size="64px" className={'portrait listitem'} />
-      )}
+    <Container narrow className={'gestor-wrapper'}>
+      <GestorCard content={content} />
     </Container>
   );
 };
-
+/**
+ * Property types.
+ * @property {Object} propTypes Property types.
+ * @static
+ */
 Gestor.propTypes = {
   content: PropTypes.shape({
     title: PropTypes.string,
-  }).isRequired,
+    description: PropTypes.string,
+    image_scales: PropTypes.shape({
+      preview: PropTypes.shape({
+        download: PropTypes.string,
+      }),
+    }),
+  }),
 };
 
 export default Gestor;

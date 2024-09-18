@@ -17,7 +17,7 @@ const SecretariaView = (props) => {
       <RenderBlocks {...props} path={path} />
       <Endereco content={content} />
       <Contato content={content} />
-      <Gestor content={content.gestor} />
+      {content.gestor && <Gestor content={content.gestor} />}
     </Container>
   );
 };
