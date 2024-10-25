@@ -1,16 +1,15 @@
 import React from 'react';
 import { withBlockExtensions } from '@plone/volto/helpers';
 import { SidebarPortal } from '@plone/volto/components';
-import GestorBlockData from './Data';
-import GestorBlockView from './View';
-
-const Edit = (props) => {
+import SecretariasBlockData from './Data';
+import SecretariasBlockView from './View';
+const SecretariasBlockEdit = (props) => {
   const { data, onChangeBlock, block, selected } = props;
   return (
     <>
-      <GestorBlockView {...props} isEditMode />
+      <SecretariasBlockView {...props} isEditMode />
       <SidebarPortal selected={selected}>
-        <GestorBlockData
+        <SecretariasBlockData
           data={data}
           block={block}
           onChangeBlock={onChangeBlock}
@@ -19,5 +18,4 @@ const Edit = (props) => {
     </>
   );
 };
-
-export default withBlockExtensions(Edit);
+export default withBlockExtensions(SecretariasBlockEdit);
